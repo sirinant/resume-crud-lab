@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+/* ===== Mint Minimal Theme ===== */
+:root {
+    --bg: #f6faf8;
+    --card: #ffffff;
+    --text: #3d4451;
+    --muted: #8a94a6;
+    --accent: #8fd3b6;
+    --accent-soft: #e9f8f1;
+    --accent-deep: #3f9a78;
+    --line: #edf3f0;
+    --note-bg: #fff8e6;
+    --note-line: #f2c46d;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Nunito', Tahoma, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+.container {
+    width: min(960px, 92%);
+    margin: 30px auto;
+}
+
+/* ---------- การ์ด ---------- */
+.card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 24px 28px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 20px rgba(143, 211, 182, 0.15);
+}
+
+/* ---------- ส่วนหัว ---------- */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.avatar {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--accent-soft);
+    box-shadow: 0 4px 14px rgba(143, 211, 182, 0.35);
+}
+
+h1 {
+    margin: 0 0 6px;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-bottom: 2px dashed var(--accent-soft);
+    padding-bottom: 10px;
+}
+
+h3 {
+    margin: 0 0 4px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+p { color: var(--muted); margin: 4px 0; }
+
+.headline {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--accent-deep);
+}
+
+a { color: var(--accent-deep); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---------- รายการ Education / Training ---------- */
+.item {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+}
+.item:last-child { border-bottom: none; }
+
+/* ---------- Skills ---------- */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-badge {
+    background: var(--accent-soft);
+    border: 1px solid #d3efe1;
+    border-radius: 16px;
+    padding: 10px 16px;
+    display: flex;
+    flex-direction: column;
+    min-width: 120px;
+    font-weight: 700;
+    color: var(--accent-deep);
+    transition: background .2s, border-color .2s;
+}
+.skill-badge:hover {
+    background: #dcf3e8;
+    border-color: var(--accent);
+}
+.skill-badge span {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--muted);
+    margin-top: 3px;
+}
+
+/* ---------- กล่องหมายเหตุ ---------- */
+.note {
+    margin-top: 16px;
+    padding: 12px 16px;
+    background: var(--note-bg);
+    border-left: 4px solid var(--note-line);
+    border-radius: 0 12px 12px 0;
+    color: var(--text);
+}
+
+footer {
+    text-align: center;
+    color: var(--muted);
+    padding: 15px;
+    font-size: 0.85rem;
+}
+
+code {
+    background: var(--accent-soft);
+    color: var(--accent-deep);
+    padding: 2px 6px;
+    border-radius: 6px;
+}
+
+/* ---------- มือถือ ---------- */
+@media (max-width: 650px) {
+    .hero { flex-direction: column; text-align: center; }
+    .avatar { width: 120px; height: 120px; }
+    h1 { font-size: 1.5rem; }
+    .card { padding: 18px; }
+    .skill-badge { flex: 1 1 45%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+}
